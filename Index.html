@@ -1,68 +1,73 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Website</title>
-    <style>
-        :root {
-            --primary: #2f3542;
-            --accent: #ff4757;
-            --bg: #f1f2f6;
-            --text: #2f3542;
-        }
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-        }
-        h1 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-        p {
-            color: #747d8c;
-            margin-bottom: 2rem;
-        }
-        .btn {
-            background-color: var(--accent);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s, opacity 0.2s;
-            display: inline-block;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Fun Facts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+    }
+    h1 {
+      color: #333;
+      font-size: 24px;
+    }
+    p {
+      color: #666;
+      font-size: 18px;
+      min-height: 60px;
+    }
+    button {
+      background: #2ea44f;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #2c974b;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>Hello, World! 🚀</h1>
-        <p>My simple HTML website is officially up and running live on the internet via GitHub Pages.</p>
-        <a href="https://github.com" class="btn" target="_blank">Visit GitHub</a>
-    </div>
+  <div class="card">
+    <h1>Did You Know? 💡</h1>
+    <p id="fact">Click the button below to generate a random fun fact!</p>
+    <button onclick="newFact()">New Fact</button>
+  </div>
+
+  <script>
+    const facts = [
+      "Honey never spoils. Archaeologists have found 3,000-year-old edible honey!",
+      "Bananas are berries, but strawberries aren't!",
+      "Octopuses have three hearts and blue blood.",
+      "A day on Venus is longer than a year on Venus.",
+      "Sharks existed before trees!"
+    ];
+
+    function newFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      document.getElementById('fact').innerText = facts[randomIndex];
+    }
+  </script>
 
 </body>
 </html>
